@@ -2,17 +2,16 @@
 let orders = JSON.parse(localStorage.getItem('orders') || '[]');
 
 function adminLogin(){
-const u = document.getElementById('adminUser').value;
-const p = document.getElementById('adminPass').value;
-if(u === ADMIN_USER && p === ADMIN_PASS){
-document.getElementById('adminLogin').style.display='none';
-document.getElementById('adminPanel').style.display='block';
-renderOrders();
-} else {
-alert('Login failed');
-}
-}
+  const u = document.getElementById('adminUser').value;
+  const p = document.getElementById('adminPass').value;
 
+  if(u === 'kttadmin' && p === 'ktt2025'){
+    document.getElementById('adminLogin').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+  } else {
+    alert('Login failed');
+  }
+}
 // ===== PAYMENT =====
 function openPayment(product){
 window.currentProduct = product;
