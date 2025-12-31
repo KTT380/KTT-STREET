@@ -31,7 +31,9 @@ status: 'PAID'
 };
 orders.push(order);
 localStorage.setItem('orders', JSON.stringify(orders));
-const msg = encodeURIComponent(Order: ${order.product} Status: PAID);
+const msg = encodeURIComponent(
+  "Order: " + order.product + " Status: PAID"
+);
 window.open('https://wa.me/8562094121859?text='+msg,'_blank');
 closePayment();
 }
