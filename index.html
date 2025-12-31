@@ -2,14 +2,17 @@
 let orders = JSON.parse(localStorage.getItem('orders') || '[]');
 
 function adminLogin(){
-  const u = document.getElementById('adminUser').value;
-  const p = document.getElementById('adminPass').value;
+  alert("ปุ่ม Login ถูกกดแล้ว");
 
-  if(u === 'kttadmin' && p === 'ktt2025'){
-    document.getElementById('adminLogin').style.display='none';
-    document.getElementById('adminPanel').style.display='block';
+  const u = document.getElementById("adminUser").value;
+  const p = document.getElementById("adminPass").value;
+
+  if(u === "kttadmin" && p === "ktt2025"){
+    alert("Login สำเร็จ");
+    document.getElementById("adminLogin").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
   } else {
-    alert('Login failed');
+    alert("Username หรือ Password ผิด");
   }
 }
 // ===== PAYMENT =====
