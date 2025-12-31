@@ -45,6 +45,29 @@ li.textContent=${o.product} | ${o.status} | ${o.time};
 list.appendChild(li);
 });
 }
-</script></body>
+  <h2>Pre-Order</h2>
+
+<input id="name" placeholder="ชื่อ"><br><br>
+<input id="phone" placeholder="เบอร์ / WhatsApp"><br><br>
+<input id="size" placeholder="ไซซ์ (S M L XL)"><br><br>
+
+<button onclick="saveOrder()">Pre-Order</button>
+
+<script>
+function saveOrder(){
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  orders.push({
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    size: document.getElementById("size").value
+  });
+
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  alert("บันทึกพรีออเดอร์แล้ว");
+}
+</script>
+</body>
 
   </html>
